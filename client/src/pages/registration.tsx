@@ -22,57 +22,9 @@ export default function Registration() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Kurs Bilgileri */}
-            <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-card-foreground mb-4">Kurs Bilgileri</h3>
-                <div className="text-4xl font-bold text-primary mb-2" data-testid="text-course-price">₺2.499</div>
-                <p className="text-muted-foreground">10 haftalık kapsamlı program</p>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>Tüm Arduino kitleri ve malzemeler dahil</span>
-                </div>
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>Online platform ve video içerikler</span>
-                </div>
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>Sertifika programı</span>
-                </div>
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>1 yıl mentor desteği</span>
-                </div>
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>Max 15 kişilik küçük gruplar</span>
-                </div>
-                <div className="flex items-center text-sm text-card-foreground">
-                  <i className="fas fa-check text-primary mr-3"></i>
-                  <span>12-16 yaş grubu öğrenciler için</span>
-                </div>
-              </div>
-
-              <div className="text-center space-y-3">
-                <div className="text-sm text-muted-foreground">
-                  <i className="fas fa-calendar mr-2"></i>
-                  Bir sonraki grup başlangıcı: 15 Ocak 2025
-                </div>
-                <div className="text-sm text-accent font-medium">
-                  <i className="fas fa-users mr-2"></i>
-                  Sadece 6 kişilik yer kaldı!
-                </div>
-              </div>
-            </div>
-
-            {/* WhatsApp Kayıt */}
-            <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
+        <div className="max-w-2xl mx-auto">
+          {/* WhatsApp Kayıt */}
+          <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
               <div className="text-center">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <i className="fab fa-whatsapp text-white text-3xl"></i>
@@ -106,44 +58,7 @@ export default function Registration() {
                   </p>
                 </div>
               </div>
-
-              {/* Kayıt Süreci */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <h4 className="font-semibold text-card-foreground mb-4 text-center">Kayıt Süreci</h4>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
-                      1
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-card-foreground">WhatsApp Mesajı</p>
-                      <p className="text-xs text-muted-foreground">Yukarıdaki butona tıklayarak mesaj gönderin</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
-                      2
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-card-foreground">Bilgi Alışverişi</p>
-                      <p className="text-xs text-muted-foreground">Uzmanımız sizinle iletişime geçecek</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
-                      3
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-card-foreground">Kayıt Tamamlama</p>
-                      <p className="text-xs text-muted-foreground">Ödeme ve kayıt işlemlerinizi tamamlayın</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
 
           {/* FAQ Section */}
           <div className="mt-12 bg-card rounded-xl p-8 shadow-sm border border-border">
