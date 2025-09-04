@@ -1,86 +1,13 @@
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-
 export default function Registration() {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    studentFirstName: "",
-    studentLastName: "",
-    studentAge: "",
-    school: "",
-    parentFirstName: "",
-    parentLastName: "",
-    parentEmail: "",
-    parentPhone: "",
-    experience: "",
-    expectations: "",
-    terms: false
-  });
+  const whatsappNumber = "905551234567"; // Türkiye telefon numarası
+  const message = encodeURIComponent(
+    `Merhaba! 🤖\n\nTemel Robotik Kodlama kursuna kayıt olmak istiyorum.\n\n📚 Kurs Bilgileri:\n• 10 haftalık program\n• Yaş grubu: 12-16\n• Kurs ücreti: ₺2.499\n• Tüm Arduino kitleri dahil\n• Sertifika programı\n\nLütfen kayıt işlemim için benimle iletişime geçin.\n\nTeşekkürler! 🙏`
+  );
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic form validation
-    const requiredFields = ['studentFirstName', 'studentLastName', 'studentAge', 'parentFirstName', 'parentLastName', 'parentEmail', 'parentPhone'];
-    const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
-    
-    if (missingFields.length > 0) {
-      toast({
-        title: "Hata",
-        description: "Lütfen tüm zorunlu alanları doldurun.",
-        variant: "destructive",
-      });
-      return;
-    }
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-    if (!formData.terms) {
-      toast({
-        title: "Hata",
-        description: "Kullanım şartlarını kabul etmelisiniz.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.parentEmail)) {
-      toast({
-        title: "Hata",
-        description: "Geçerli bir e-posta adresi girin.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Simulate successful registration
-    toast({
-      title: "Kayıt Başarılı",
-      description: "Kayıt işleminiz başarıyla tamamlandı. Size e-posta ile onay gönderilecektir.",
-    });
-
-    // Reset form
-    setFormData({
-      studentFirstName: "",
-      studentLastName: "",
-      studentAge: "",
-      school: "",
-      parentFirstName: "",
-      parentLastName: "",
-      parentEmail: "",
-      parentPhone: "",
-      experience: "",
-      expectations: "",
-      terms: false
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-    });
+  const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -91,270 +18,162 @@ export default function Registration() {
             Kursa Kayıt Olun
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Robotik kodlama serüveninize bugün başlayın. Sadece birkaç adımda kayıt işleminizi tamamlayın.
+            WhatsApp üzerinden hızlı ve kolay kayıt! Sadece bir tıkla bizimle iletişime geçin.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Pricing Card */}
-            <div className="lg:col-span-1">
-              <div className="bg-card rounded-xl p-8 shadow-sm border border-border sticky top-24">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-card-foreground mb-4">Kurs Ücreti</h3>
-                  <div className="text-4xl font-bold text-primary mb-2" data-testid="text-course-price">₺2.499</div>
-                  <p className="text-muted-foreground">10 haftalık program</p>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Kurs Bilgileri */}
+            <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-card-foreground mb-4">Kurs Bilgileri</h3>
+                <div className="text-4xl font-bold text-primary mb-2" data-testid="text-course-price">₺2.499</div>
+                <p className="text-muted-foreground">10 haftalık kapsamlı program</p>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>Tüm Arduino kitleri ve malzemeler dahil</span>
                 </div>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center text-sm text-card-foreground">
-                    <i className="fas fa-check text-primary mr-3"></i>
-                    <span>Tüm Arduino kitleri dahil</span>
-                  </div>
-                  <div className="flex items-center text-sm text-card-foreground">
-                    <i className="fas fa-check text-primary mr-3"></i>
-                    <span>Online platform erişimi</span>
-                  </div>
-                  <div className="flex items-center text-sm text-card-foreground">
-                    <i className="fas fa-check text-primary mr-3"></i>
-                    <span>Sertifika programı</span>
-                  </div>
-                  <div className="flex items-center text-sm text-card-foreground">
-                    <i className="fas fa-check text-primary mr-3"></i>
-                    <span>1 yıl mentor desteği</span>
-                  </div>
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>Online platform ve video içerikler</span>
                 </div>
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>Sertifika programı</span>
+                </div>
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>1 yıl mentor desteği</span>
+                </div>
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>Max 15 kişilik küçük gruplar</span>
+                </div>
+                <div className="flex items-center text-sm text-card-foreground">
+                  <i className="fas fa-check text-primary mr-3"></i>
+                  <span>12-16 yaş grubu öğrenciler için</span>
+                </div>
+              </div>
 
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground mb-4">
-                    <i className="fas fa-calendar mr-2"></i>
-                    Bir sonraki grup: 15 Ocak 2024
-                  </div>
-                  <div className="text-sm text-accent font-medium">
-                    <i className="fas fa-users mr-2"></i>
-                    Sadece 6 kişilik yer kaldı!
-                  </div>
+              <div className="text-center space-y-3">
+                <div className="text-sm text-muted-foreground">
+                  <i className="fas fa-calendar mr-2"></i>
+                  Bir sonraki grup başlangıcı: 15 Ocak 2025
+                </div>
+                <div className="text-sm text-accent font-medium">
+                  <i className="fas fa-users mr-2"></i>
+                  Sadece 6 kişilik yer kaldı!
                 </div>
               </div>
             </div>
 
-            {/* Registration Form */}
-            <div className="lg:col-span-2">
-              <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
-                <h3 className="text-2xl font-bold text-card-foreground mb-8">Kayıt Formu</h3>
+            {/* WhatsApp Kayıt */}
+            <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fab fa-whatsapp text-white text-3xl"></i>
+                </div>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Student Information */}
-                  <div className="border-b border-border pb-8">
-                    <h4 className="text-lg font-semibold text-card-foreground mb-6">Öğrenci Bilgileri</h4>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="studentFirstName" className="block text-sm font-medium text-card-foreground mb-2">
-                          Öğrenci Adı *
-                        </label>
-                        <input
-                          type="text"
-                          id="studentFirstName"
-                          name="studentFirstName"
-                          value={formData.studentFirstName}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-student-firstname"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="studentLastName" className="block text-sm font-medium text-card-foreground mb-2">
-                          Öğrenci Soyadı *
-                        </label>
-                        <input
-                          type="text"
-                          id="studentLastName"
-                          name="studentLastName"
-                          value={formData.studentLastName}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-student-lastname"
-                        />
-                      </div>
+                <h3 className="text-2xl font-bold text-card-foreground mb-4">
+                  WhatsApp ile Kayıt
+                </h3>
+                
+                <p className="text-muted-foreground mb-8">
+                  Hızlı ve kolay kayıt için WhatsApp üzerinden bizimle iletişime geçin. 
+                  Kurs hakkında tüm detayları öğrenin ve kayıt işleminizi tamamlayın.
+                </p>
+
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg font-semibold transition-colors duration-200 text-lg flex items-center justify-center space-x-3 mb-6"
+                  data-testid="button-whatsapp-register"
+                >
+                  <i className="fab fa-whatsapp text-2xl"></i>
+                  <span>WhatsApp'dan Kayıt Ol</span>
+                </button>
+
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p className="flex items-center justify-center">
+                    <i className="fas fa-phone mr-2 text-primary"></i>
+                    +90 (555) 123-45-67
+                  </p>
+                  <p className="text-xs">
+                    Mesaj gönderdikten sonra en kısa sürede size dönüş yapacağız
+                  </p>
+                </div>
+              </div>
+
+              {/* Kayıt Süreci */}
+              <div className="mt-8 pt-8 border-t border-border">
+                <h4 className="font-semibold text-card-foreground mb-4 text-center">Kayıt Süreci</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
+                      1
                     </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-6 mt-6">
-                      <div>
-                        <label htmlFor="studentAge" className="block text-sm font-medium text-card-foreground mb-2">
-                          Yaş *
-                        </label>
-                        <select
-                          id="studentAge"
-                          name="studentAge"
-                          value={formData.studentAge}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="select-student-age"
-                        >
-                          <option value="">Yaş seçin</option>
-                          <option value="12">12</option>
-                          <option value="13">13</option>
-                          <option value="14">14</option>
-                          <option value="15">15</option>
-                          <option value="16">16</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label htmlFor="school" className="block text-sm font-medium text-card-foreground mb-2">
-                          Okul
-                        </label>
-                        <input
-                          type="text"
-                          id="school"
-                          name="school"
-                          value={formData.school}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-school"
-                        />
-                      </div>
+                    <div>
+                      <p className="text-sm font-medium text-card-foreground">WhatsApp Mesajı</p>
+                      <p className="text-xs text-muted-foreground">Yukarıdaki butona tıklayarak mesaj gönderin</p>
                     </div>
                   </div>
-
-                  {/* Parent/Guardian Information */}
-                  <div className="border-b border-border pb-8">
-                    <h4 className="text-lg font-semibold text-card-foreground mb-6">Veli Bilgileri</h4>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="parentFirstName" className="block text-sm font-medium text-card-foreground mb-2">
-                          Veli Adı *
-                        </label>
-                        <input
-                          type="text"
-                          id="parentFirstName"
-                          name="parentFirstName"
-                          value={formData.parentFirstName}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-parent-firstname"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="parentLastName" className="block text-sm font-medium text-card-foreground mb-2">
-                          Veli Soyadı *
-                        </label>
-                        <input
-                          type="text"
-                          id="parentLastName"
-                          name="parentLastName"
-                          value={formData.parentLastName}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-parent-lastname"
-                        />
-                      </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
+                      2
                     </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-6 mt-6">
-                      <div>
-                        <label htmlFor="parentEmail" className="block text-sm font-medium text-card-foreground mb-2">
-                          E-posta *
-                        </label>
-                        <input
-                          type="email"
-                          id="parentEmail"
-                          name="parentEmail"
-                          value={formData.parentEmail}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-parent-email"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="parentPhone" className="block text-sm font-medium text-card-foreground mb-2">
-                          Telefon *
-                        </label>
-                        <input
-                          type="tel"
-                          id="parentPhone"
-                          name="parentPhone"
-                          value={formData.parentPhone}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                          data-testid="input-parent-phone"
-                        />
-                      </div>
+                    <div>
+                      <p className="text-sm font-medium text-card-foreground">Bilgi Alışverişi</p>
+                      <p className="text-xs text-muted-foreground">Uzmanımız sizinle iletişime geçecek</p>
                     </div>
                   </div>
-
-                  {/* Additional Information */}
-                  <div className="pb-8">
-                    <h4 className="text-lg font-semibold text-card-foreground mb-6">Ek Bilgiler</h4>
-                    
-                    <div className="mb-6">
-                      <label htmlFor="experience" className="block text-sm font-medium text-card-foreground mb-2">
-                        Programlama Deneyimi
-                      </label>
-                      <select
-                        id="experience"
-                        name="experience"
-                        value={formData.experience}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                        data-testid="select-experience"
-                      >
-                        <option value="">Deneyim seviyesi seçin</option>
-                        <option value="none">Hiç yok</option>
-                        <option value="beginner">Başlangıç seviyesi</option>
-                        <option value="intermediate">Orta seviye</option>
-                      </select>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-primary-foreground text-xs font-bold mt-1">
+                      3
                     </div>
-                    
-                    <div className="mb-6">
-                      <label htmlFor="expectations" className="block text-sm font-medium text-card-foreground mb-2">
-                        Kurstan Beklentileriniz
-                      </label>
-                      <textarea
-                        id="expectations"
-                        name="expectations"
-                        rows={4}
-                        value={formData.expectations}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
-                        placeholder="Kurstan ne öğrenmek istiyorsunuz?"
-                        data-testid="textarea-expectations"
-                      />
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <input
-                        type="checkbox"
-                        id="terms"
-                        name="terms"
-                        checked={formData.terms}
-                        onChange={handleInputChange}
-                        required
-                        className="w-5 h-5 text-primary bg-input border border-border rounded focus:ring-2 focus:ring-ring mt-0.5"
-                        data-testid="checkbox-terms"
-                      />
-                      <label htmlFor="terms" className="text-sm text-card-foreground">
-                        <span className="font-medium">Kullanım şartlarını</span> ve{" "}
-                        <span className="font-medium">gizlilik politikasını</span> okudum ve kabul ediyorum. *
-                      </label>
+                    <div>
+                      <p className="text-sm font-medium text-card-foreground">Kayıt Tamamlama</p>
+                      <p className="text-xs text-muted-foreground">Ödeme ve kayıt işlemlerinizi tamamlayın</p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 text-lg"
-                    data-testid="button-registration-submit"
-                  >
-                    <i className="fas fa-user-plus mr-2"></i>
-                    Kayıt Ol
-                  </button>
-                </form>
+          {/* FAQ Section */}
+          <div className="mt-12 bg-card rounded-xl p-8 shadow-sm border border-border">
+            <h3 className="text-xl font-semibold text-card-foreground mb-6 text-center">
+              Sık Sorulan Sorular
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-medium text-card-foreground mb-2">Ön koşul bilgi gerekli mi?</h4>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Hayır, hiçbir programlama deneyimi gerekmez. Temellerden başlıyoruz.
+                </p>
+                
+                <h4 className="font-medium text-card-foreground mb-2">Kurs materyalleri dahil mi?</h4>
+                <p className="text-muted-foreground text-sm">
+                  Evet, tüm Arduino kitleri ve elektronik bileşenler dahildir.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-card-foreground mb-2">Online destek var mı?</h4>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Evet, kurs boyunca WhatsApp grubu ve mentor desteği sağlanır.
+                </p>
+                
+                <h4 className="font-medium text-card-foreground mb-2">Yaş sınırı var mı?</h4>
+                <p className="text-muted-foreground text-sm">
+                  Kurs 12-16 yaş grubu öğrenciler için tasarlanmıştır.
+                </p>
               </div>
             </div>
           </div>
