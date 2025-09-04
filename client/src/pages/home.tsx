@@ -11,7 +11,7 @@ export default function Home() {
           style={{
             backgroundImage: `url(${heroBackground})`,
             backgroundSize: '1200px',
-            backgroundPosition: 'center top 10px',
+            backgroundPosition: 'center top 280px',
             backgroundRepeat: 'no-repeat',
             opacity: 0.5
           }}
