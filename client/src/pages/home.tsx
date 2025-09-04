@@ -5,13 +5,13 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="py-20 lg:py-32 relative bg-white">
+      <div className="py-10 lg:py-16 relative bg-white">
         <div 
           className="absolute inset-0"
           style={{
             backgroundImage: `url(${heroBackground})`,
             backgroundSize: '1200px',
-            backgroundPosition: 'center top 50px',
+            backgroundPosition: 'center top 10px',
             backgroundRepeat: 'no-repeat',
             opacity: 0.5
           }}
