@@ -44,57 +44,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Neden Bizim Kursumuz?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Modern eğitim yöntemleri ve uygulamalı projelerle robotik kodlamanın temellerini öğrenin
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <i className="fas fa-graduation-cap text-primary text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                Uzman Eğitmenler
-              </h3>
-              <p className="text-muted-foreground">
-                Alanında deneyimli, sertifikalı eğitmenlerden robotik kodlamanın temellerini öğrenin.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                <i className="fas fa-cogs text-secondary text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                Uygulamalı Projeler
-              </h3>
-              <p className="text-muted-foreground">
-                Her hafta gerçek robotik projeler üzerinde çalışarak teorik bilgiyi pratiğe dökün.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                <i className="fas fa-certificate text-accent text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                Sertifika Programı
-              </h3>
-              <p className="text-muted-foreground">
-                Kurs sonunda geçerli sertifikanızı alın ve becerilerinizi kanıtlayın.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
