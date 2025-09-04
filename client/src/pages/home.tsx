@@ -6,22 +6,21 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div 
-        className="py-20 lg:py-32 relative bg-black bg-opacity-70"
+        className="py-20 lg:py-32 relative bg-white"
         style={{
           backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Temel Robotik Kodlama Kursuna Hoş Geldiniz
               </h1>
-              <p className="text-lg lg:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
+              <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed">
                 10 haftalık kapsamlı programımızla robotik kodlamanın temellerini öğrenin. 
                 Uygulamalı projeler ve uzman eğitmenlerle geleceğin teknolojisine adım atın.
               </p>
@@ -35,7 +34,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/kurs"
-                  className="bg-transparent border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-200 text-center"
+                  className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-center"
                   data-testid="button-view-course"
                 >
                   Kursu İncele
