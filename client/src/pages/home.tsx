@@ -5,15 +5,17 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div 
-        className="py-20 lg:py-32 relative bg-white"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: '600px',
-          backgroundPosition: 'center top 50px',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+      <div className="py-20 lg:py-32 relative bg-white">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            backgroundSize: '1200px',
+            backgroundPosition: 'center top 50px',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.5
+          }}
+        ></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
