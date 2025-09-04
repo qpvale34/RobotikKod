@@ -9,8 +9,8 @@ export default function Home() {
         className="py-20 lg:py-32 relative bg-white"
         style={{
           backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
+          backgroundSize: '600px',
+          backgroundPosition: 'center top 50px',
           backgroundRepeat: 'no-repeat'
         }}
       >
