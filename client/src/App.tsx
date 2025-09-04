@@ -7,7 +7,6 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import Home from "@/pages/home";
 import Course from "@/pages/course";
-import Contact from "@/pages/contact";
 import Registration from "@/pages/registration";
 import NotFound from "@/pages/not-found";
 
@@ -19,7 +18,6 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/kurs" component={Course} />
-          <Route path="/iletisim" component={Contact} />
           <Route path="/kayit" component={Registration} />
           <Route component={NotFound} />
         </Switch>

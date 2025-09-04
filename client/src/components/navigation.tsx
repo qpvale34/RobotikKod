@@ -9,7 +9,6 @@ export default function Navigation() {
   const navItems = [
     { href: "/", label: "Anasayfa" },
     { href: "/kurs", label: "Kurs" },
-    { href: "/iletisim", label: "İletişim" },
   ];
 
   const toggleMobileMenu = () => {
