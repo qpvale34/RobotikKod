@@ -1,39 +1,45 @@
+import arduinoImage from "@assets/generated_images/Arduino_LED_programming_setup_de581e54.png";
+import sensorsImage from "@assets/generated_images/Electronic_sensors_collection_display_9637bdd6.png";
+import motorsImage from "@assets/generated_images/Robot_motors_and_movement_71007dfc.png";
+import obstacleImage from "@assets/generated_images/Obstacle_avoiding_robot_c6d83d24.png";
+import wirelessImage from "@assets/generated_images/Wireless_robot_smartphone_control_30dd5d29.png";
+
 export default function Course() {
   const weeklyProgram = [
     {
       week: 1,
       title: "Robotik ve Kodlamaya Giriş",
-      description: "Robotik nedir? Kodlama temelleri ve Arduino platformu tanıtımı. İlk LED yakma projesi.",
-      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      tags: ["Arduino", "C++", "LED"]
+      description: "Robotik nedir? Arduino platformu tanıtımı, temel elektronik bileşenler ve ilk LED yakma projesi. Kodlama mantığının temelleri.",
+      image: arduinoImage,
+      tags: ["Arduino", "Temel Elektronik", "LED Projesi"]
     },
     {
       week: 2,
-      title: "Sensörler ve Veri Okuma",
-      description: "Farklı sensör türleri, analog ve dijital veri okuma. Sıcaklık sensörü ile ilk projemiz.",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      tags: ["Sensörler", "Analog/Dijital", "Seri İletişim"]
+      title: "Sensörler ve Çevre Algılama",
+      description: "Farklı sensör türleri (sıcaklık, ışık, ses), analog ve dijital veri okuma, sensör kalibrasyonu ve veri işleme teknikleri.",
+      image: sensorsImage,
+      tags: ["Sensörler", "Veri Okuma", "Analog/Dijital"]
     },
     {
       week: 3,
-      title: "Motor Kontrolü ve Hareket",
-      description: "Servo ve step motorlar, PWM kontrolü, ilk hareket eden robot projesi.",
-      image: "https://pixabay.com/get/g3f3661fdfab31a3780f1c346d40167659991a12c220553950110d50821349130e00a35c0b5b81377f18e27127b73a2190ab7b20d1e9e9c477b67f02781144797_1280.jpg",
-      tags: ["Motor Kontrolü", "PWM", "Hareket"]
+      title: "Motor Kontrolü ve Robot Hareketi",
+      description: "Servo motorlar, DC motorlar, step motorlar. PWM sinyalleri, motor sürücü devreler ve hareket kontrol algoritmaları.",
+      image: motorsImage,
+      tags: ["Motorlar", "PWM", "Hareket Kontrolü"]
     },
     {
       week: 4,
-      title: "Mesafe Ölçümü ve Engel Algılama",
-      description: "Ultrasonik sensörler, mesafe ölçümü, engelleri algılayıp kaçınan robot yapımı.",
-      image: "https://pixabay.com/get/g2a36d39e1eca278559a9c2e38198533f71f14a5bab7a6ed1050d5f33cb1f5aa2da7a6ed15cf6becfde045a2531fcf1b1e24f95ecdacaebaf17329ee681c54c61_1280.jpg",
-      tags: ["Ultrasonik", "Engel Algılama", "Otonom Robot"]
+      title: "Otonom Navigasyon ve Engel Algılama",
+      description: "Ultrasonik mesafe sensörleri, IR sensörler, engel algılama algoritmaları ve otonom hareket eden robot tasarımı.",
+      image: obstacleImage,
+      tags: ["Ultrasonik", "Otonom Robot", "Algoritma"]
     },
     {
       week: 5,
-      title: "Kablosuz İletişim ve Kontrol",
-      description: "Bluetooth modülleri, kablosuz veri iletimi, telefon ile robot kontrolü.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      tags: ["Bluetooth", "Kablosuz", "Uzaktan Kontrol"]
+      title: "Kablosuz İletişim ve Uzaktan Kontrol",
+      description: "Bluetooth ve WiFi modülleri, kablosuz veri iletimi, mobil uygulama entegrasyonu ve uzaktan robot kontrolü.",
+      image: wirelessImage,
+      tags: ["Bluetooth", "WiFi", "Mobil Kontrol"]
     }
   ];
 
@@ -44,9 +50,7 @@ export default function Course() {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
             10 Haftalık Kurs Programı
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Kapsamlı müfredatımızla robotik kodlamanın temellerinden ileri seviyeye kadar tüm konuları öğrenin
-          </p>
+          
         </div>
 
         {/* Course Overview */}
@@ -130,24 +134,24 @@ export default function Course() {
 
           {/* Week 6-10 Summary */}
           <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 border border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Hafta 6-10: İleri Seviye Projeler</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Hafta 6-10: İleri Seviye Robotik Uygulamaları</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-foreground mb-2">6. Hafta: Görüntü İşleme</h4>
-                <p className="text-muted-foreground text-sm mb-4">Kamera modülleri ve temel görüntü işleme teknikleri</p>
+                <h4 className="font-semibold text-foreground mb-2">6. Hafta: Programlama ve Algoritmalar</h4>
+                <p className="text-muted-foreground text-sm mb-4">Döngüler, koşullar, fonksiyonlar ve robot davranış programlama</p>
                 
-                <h4 className="font-semibold text-foreground mb-2">7. Hafta: Ses Kontrolü</h4>
-                <p className="text-muted-foreground text-sm mb-4">Mikrofonlar, ses algılama ve sesle kontrol edilen robot</p>
+                <h4 className="font-semibold text-foreground mb-2">7. Hafta: Çoklu Sensör Entegrasyonu</h4>
+                <p className="text-muted-foreground text-sm mb-4">Birden fazla sensör kullanarak akıllı karar verme sistemleri</p>
                 
-                <h4 className="font-semibold text-foreground mb-2">8. Hafta: IoT Entegrasyonu</h4>
-                <p className="text-muted-foreground text-sm">WiFi modülleri ve internet bağlantılı robot sistemleri</p>
+                <h4 className="font-semibold text-foreground mb-2">8. Hafta: Robot Kol ve Manipülatör</h4>
+                <p className="text-muted-foreground text-sm">Servo motorlarla robot kol tasarımı ve nesne tutma</p>
               </div>
               <div>
-                <h4 className="font-semibold text-foreground mb-2">9. Hafta: Çok Sensörlü Sistem</h4>
-                <p className="text-muted-foreground text-sm mb-4">Birden fazla sensör kullanarak akıllı robot tasarımı</p>
+                <h4 className="font-semibold text-foreground mb-2">9. Hafta: Çizgi İzleyen Robot</h4>
+                <p className="text-muted-foreground text-sm mb-4">IR sensörlerle çizgi takip algoritmaları ve PID kontrolü</p>
                 
-                <h4 className="font-semibold text-foreground mb-2">10. Hafta: Final Projesi</h4>
-                <p className="text-muted-foreground text-sm mb-4">Öğrenilen tüm konuları birleştiren kapsamlı proje</p>
+                <h4 className="font-semibold text-foreground mb-2">10. Hafta: Final Projesi ve Sunum</h4>
+                <p className="text-muted-foreground text-sm mb-4">Kişisel robot projesi tasarımı, yapımı ve grup sunumu</p>
                 
                 <div className="mt-6">
                   <span className="bg-accent text-accent-foreground px-4 py-2 rounded-lg font-medium">

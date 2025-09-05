@@ -1,21 +1,12 @@
 import { Link } from "wouter";
-import heroBackground from "@assets/hero-background.png";
+
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="py-10 lg:py-16 relative bg-white">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${heroBackground})`,
-            backgroundSize: '1200px',
-            backgroundPosition: 'center top 280px',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.5
-          }}
-        ></div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
