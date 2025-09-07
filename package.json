@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+     "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
@@ -58,6 +63,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "esbuild": "^0.19.2",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.31",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.7.0",
