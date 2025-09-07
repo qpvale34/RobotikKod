@@ -13,7 +13,7 @@ export default function Footer() {
               <span className="text-xl font-bold text-primary">RobotikKod</span>
             </div>
             <p className="text-muted-foreground mb-4">
-              Geleceğin teknolojisini bugünden öğrenmek için en iyi robotik kodlama eğitimi platformu.
+              Geleceğin teknolojisini bugünden öğrenmek için.
             </p>
             <div className="flex space-x-4">
               <a
@@ -31,9 +31,10 @@ export default function Footer() {
                 <i className="fab fa-twitter text-lg"></i>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/dudulluaihl/"
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 data-testid="link-instagram"
+                target="_blank" rel="noopener noreferrer"
               >
                 <i className="fab fa-instagram text-lg"></i>
               </a>

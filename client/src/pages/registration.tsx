@@ -1,7 +1,7 @@
 export default function Registration() {
-  const whatsappNumber = "905551234567"; // Türkiye telefon numarası
+  const whatsappNumber = "905065508830"; // Türkiye telefon numarası
   const message = encodeURIComponent(
-    `Merhaba! 🤖\n\nTemel Robotik Kodlama kursuna kayıt olmak istiyorum.\n\n📚 Kurs Bilgileri:\n• 10 haftalık program\n• Yaş grubu: 12-16\n• Kurs ücreti: ₺2.499\n• Tüm Arduino kitleri dahil\n• Sertifika programı\n\nLütfen kayıt işlemim için benimle iletişime geçin.\n\nTeşekkürler! 🙏`
+    `Merhaba! 🤖\n\nTemel Robotik Kodlama kursuna kayıt olmak için cumartesi günü saat 09:00 ile 12:30 saatleri arasında okulumuzdaki kurslarla çakışmaması gerektiğini unutmayın.\n\n📚 İstenen Bilgiler:\n• İsim-Soyisim:\n• Sınıfı ve numarası:\n• Anne veya baba telefon numarası:\n• Devamsızlık yapmama şartı onayı:\n• Diğer kurslarla çakışıyor mu ?:\n\nLütfen bilgilerinizi tek mesaj olacak şekilde yazınız.\n\nTeşekkürler! 🙏`
   );
 
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -11,7 +11,7 @@ export default function Registration() {
   };
 
   return (
-    <div className="min-h-screen py-20 bg-muted/30">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-teal-100 to-blue-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -24,7 +24,7 @@ export default function Registration() {
 
         <div className="max-w-2xl mx-auto">
           {/* WhatsApp Kayıt */}
-          <div className="bg-card rounded-xl p-8 shadow-sm border border-border">
+          <div className="bg-gradient-to-br from-white/95 to-gray-50/90 backdrop-blur-sm rounded-2xl p-8 shadow-3xl border border-gray-200/50">
               <div className="text-center">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <i className="fab fa-whatsapp text-white text-3xl"></i>
@@ -51,7 +51,7 @@ export default function Registration() {
                 <div className="text-sm text-muted-foreground space-y-2">
                   <p className="flex items-center justify-center">
                     <i className="fas fa-phone mr-2 text-primary"></i>
-                    +90 (555) 123-45-67
+                     sadece mesaj lütfen - arama yapılmaz
                   </p>
                   <p className="text-xs">
                     Mesaj gönderdikten sonra en kısa sürede size dönüş yapacağız
@@ -87,7 +87,7 @@ export default function Registration() {
                 
                 <h4 className="font-medium text-card-foreground mb-2">Yaş sınırı var mı?</h4>
                 <p className="text-muted-foreground text-sm">
-                  Kurs 12-16 yaş grubu öğrenciler için tasarlanmıştır.
+                  Kurs 10-16 yaş grubu öğrenciler için tasarlanmıştır.
                 </p>
               </div>
             </div>

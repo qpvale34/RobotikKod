@@ -8,43 +8,78 @@ export default function Course() {
   const weeklyProgram = [
     {
       week: 1,
-      title: "Robotik ve Kodlamaya Giriş",
-      description: "Robotik nedir? Arduino platformu tanıtımı, temel elektronik bileşenler ve ilk LED yakma projesi. Kodlama mantığının temelleri.",
+      title: "Tanışma ve Robotik Nedir?",
+      description: "Kurs tanıtımı, robotik kavramı, güvenlik kuralları ve temel elektronik malzemelerle tanışma.",
       image: arduinoImage,
-      tags: ["Arduino", "Temel Elektronik", "LED Projesi"]
+      tags: ["Tanışma", "Robotik", "Elektronik"]
     },
     {
       week: 2,
-      title: "Sensörler ve Çevre Algılama",
-      description: "Farklı sensör türleri (sıcaklık, ışık, ses), analog ve dijital veri okuma, sensör kalibrasyonu ve veri işleme teknikleri.",
+      title: "Basit Devre Kurma ve LED Yakma",
+      description: "Pil, anahtar ve LED ile basit devre kurma, LED yakma uygulaması.",
       image: sensorsImage,
-      tags: ["Sensörler", "Veri Okuma", "Analog/Dijital"]
+      tags: ["Devre", "LED", "Uygulama"]
     },
     {
       week: 3,
-      title: "Motor Kontrolü ve Robot Hareketi",
-      description: "Servo motorlar, DC motorlar, step motorlar. PWM sinyalleri, motor sürücü devreler ve hareket kontrol algoritmaları.",
+      title: "Buton ile LED Kontrolü",
+      description: "Buton kullanarak LED açma-kapama, giriş/çıkış kavramı ve uygulama.",
       image: motorsImage,
-      tags: ["Motorlar", "PWM", "Hareket Kontrolü"]
+      tags: ["Buton", "LED", "Kontrol"]
     },
     {
       week: 4,
-      title: "Otonom Navigasyon ve Engel Algılama",
-      description: "Ultrasonik mesafe sensörleri, IR sensörler, engel algılama algoritmaları ve otonom hareket eden robot tasarımı.",
+      title: "Buzzer ile Sesli Uyarı",
+      description: "Buzzer nedir, devreye eklenmesi ve sesli uyarı uygulaması.",
       image: obstacleImage,
-      tags: ["Ultrasonik", "Otonom Robot", "Algoritma"]
+      tags: ["Buzzer", "Ses", "Uygulama"]
     },
     {
       week: 5,
-      title: "Kablosuz İletişim ve Uzaktan Kontrol",
-      description: "Bluetooth ve WiFi modülleri, kablosuz veri iletimi, mobil uygulama entegrasyonu ve uzaktan robot kontrolü.",
+      title: "Işık Sensörü (LDR) ile Otomatik Lamba",
+      description: "LDR ile ortam ışığına göre LED yakma uygulaması.",
       image: wirelessImage,
-      tags: ["Bluetooth", "WiFi", "Mobil Kontrol"]
+      tags: ["LDR", "Sensör", "Otomasyon"]
+    },
+    {
+      week: 6,
+      title: "Basit Motor Kontrolü",
+      description: "DC motorun çalışma mantığı, motoru devreye bağlama ve çalıştırma.",
+      image: arduinoImage,
+      tags: ["Motor", "Devre", "Uygulama"]
+    },
+    {
+      week: 7,
+      title: "Servo Motor ile Hareket",
+      description: "Servo motor nedir, temel hareket uygulamaları.",
+      image: sensorsImage,
+      tags: ["Servo", "Hareket", "Uygulama"]
+    },
+    {
+      week: 8,
+      title: "Temel Kodlama Alıştırmaları",
+      description: "Döngüler, koşullar ve temel kodlama mantığı ile uygulamalar.",
+      image: motorsImage,
+      tags: ["Kodlama", "Döngü", "Koşul"]
+    },
+    {
+      week: 9,
+      title: "Mini Proje: Akıllı Lamba veya Basit Robot",
+      description: "Öğrencilerle birlikte seçilecek basit bir proje uygulaması (ör. akıllı lamba, engelden kaçan robot vb.).",
+      image: obstacleImage,
+      tags: ["Proje", "Uygulama", "Takım Çalışması"]
+    },
+    {
+      week: 10,
+      title: "Kendi Projeni Tasarla ve Sergile",
+      description: "Her kursiyer kendi seçtiği küçük bir projeyi tasarlayıp sınıfta sunar.",
+      image: wirelessImage,
+      tags: ["Sunum", "Proje", "Yaratıcılık"]
     }
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-muted/30">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-teal-100 to-blue-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -84,7 +119,7 @@ export default function Course() {
               </div>
               <h3 className="text-lg font-semibold text-card-foreground">Yaş Grubu</h3>
             </div>
-            <p className="text-2xl font-bold text-accent mb-2" data-testid="text-age-group">12-16 Yaş</p>
+            <p className="text-2xl font-bold text-accent mb-2" data-testid="text-age-group">10-16 Yaş</p>
             <p className="text-muted-foreground">Orta ve lise öğrencilerine uygun</p>
           </div>
         </div>
@@ -132,35 +167,7 @@ export default function Course() {
             </div>
           ))}
 
-          {/* Week 6-10 Summary */}
-          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 border border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Hafta 6-10: İleri Seviye Robotik Uygulamaları</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">6. Hafta: Programlama ve Algoritmalar</h4>
-                <p className="text-muted-foreground text-sm mb-4">Döngüler, koşullar, fonksiyonlar ve robot davranış programlama</p>
-                
-                <h4 className="font-semibold text-foreground mb-2">7. Hafta: Çoklu Sensör Entegrasyonu</h4>
-                <p className="text-muted-foreground text-sm mb-4">Birden fazla sensör kullanarak akıllı karar verme sistemleri</p>
-                
-                <h4 className="font-semibold text-foreground mb-2">8. Hafta: Robot Kol ve Manipülatör</h4>
-                <p className="text-muted-foreground text-sm">Servo motorlarla robot kol tasarımı ve nesne tutma</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">9. Hafta: Çizgi İzleyen Robot</h4>
-                <p className="text-muted-foreground text-sm mb-4">IR sensörlerle çizgi takip algoritmaları ve PID kontrolü</p>
-                
-                <h4 className="font-semibold text-foreground mb-2">10. Hafta: Final Projesi ve Sunum</h4>
-                <p className="text-muted-foreground text-sm mb-4">Kişisel robot projesi tasarımı, yapımı ve grup sunumu</p>
-                
-                <div className="mt-6">
-                  <span className="bg-accent text-accent-foreground px-4 py-2 rounded-lg font-medium">
-                    <i className="fas fa-trophy mr-2"></i>Sertifika Töreni
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Course Materials */}

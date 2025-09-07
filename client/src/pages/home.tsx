@@ -1,21 +1,38 @@
 import { Link } from "wouter";
-
+import okulLogo from "../../../attached_assets/okuLLOGO.png";
+import anasayfaImg from "../../../attached_assets/anasayfa.png";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-teal-100 to-blue-100">
+      {/* Ana Başlık */}
+
+      <div className="w-full flex items-center justify-center py-8">
+        <div className="flex items-center gap-4">
+          <div className="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border border-gray-200 overflow-hidden">
+            <img
+              src={okulLogo}
+              alt="Okul Logo"
+              className="w-21 h-21 object-contain"
+            />
+          </div>
+          <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 tracking-tight">
+            Dudullu Amanetoğlu Anadolu İmam Hatip Lisesi
+          </span>
+        </div>
+      </div>
       {/* Hero Section */}
-      <div className="py-10 lg:py-16 relative bg-white">
-        
+      <div className="py-10 lg:py-16 relative bg-white/80 backdrop-blur-md">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <div className="bg-gradient-to-br from-white/95 to-gray-50/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200/50">
+            <div className="text-center lg:text-left col-span-2">
+              <div className="bg-gradient-to-br from-white/95 to-gray-50/90 rounded-2xl p-8 border border-gray-200/50 transition-transform duration-300 hover:scale-105 hover:-translate-y-1 shadow-[0_24px_80px_0_rgba(16,38,74,0.40),0_4px_16px_0_rgba(16,38,74,0.10)] bg-white/90 antialiased">
                 <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                 Dudullu Amanetoğlu Anadolu İmam Hatip lisesi Temel Robotik Kodlama Kursuna Hoş Geldiniz
+                  Robotik Kodlama Kursuna Hoş Geldiniz
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  10 haftalık kapsamlı programımızla robotik kodlamanın temellerini öğrenin. 
+                  10 haftalık kapsamlı programımızla robotik kodlamanın temellerini
+                  öğrenin.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link
@@ -35,18 +52,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <img
-                src="https://pixabay.com/get/g3d7e28ee51ed16760f2712fab31473d239c4b39f89a5274479537d6c8a5d6d2412e2a639630c0a2d793a3648a5dd68378a41230cf9a2d181366cbf6f883f9084_1280.jpg"
-                alt="Modern robotics and coding workspace"
-                className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg"
-                data-testid="img-hero"
-              />
-            </div>
           </div>
         </div>
       </div>
-
+      {/* Anasayfa Görseli */}
+      <div className="w-full flex justify-center mt-8 mb-8">
+        <img
+          src={anasayfaImg}
+          alt="Robotik Kodlama Sınıfı"
+          className="rounded-xl shadow-lg max-w-3xl w-full h-auto object-cover"
+        />
+      </div>
     </div>
+      
   );
 }
